@@ -325,12 +325,31 @@ var MapComponent = function MapComponent(_ref) {
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
     var boundsArray = [sw.lng(), sw.lat(), ne.lng(), ne.lat()];
+    var marginBounds = [{
+      nw: {
+        lat: ne.lat(),
+        lng: sw.lng()
+      },
+      se: {
+        lat: sw.lat(),
+        lng: ne.lng()
+      },
+      sw: {
+        lat: sw.lat(),
+        lng: sw.lng()
+      },
+      ne: {
+        lat: ne.lat(),
+        lng: ne.lng()
+      }
+    }];
     if (!isArraysEqualEps(boundsArray, prevBoundsRef.current, EPS)) {
       if (onChange) {
         onChange({
           zoom: zoom,
           center: [centerLatLng.lng(), centerLatLng.lat()],
-          bounds: bounds
+          bounds: bounds,
+          marginBounds: marginBounds
         });
       }
       prevBoundsRef.current = boundsArray;

@@ -21,12 +21,34 @@ const MapComponent = ({ children, style, defaultCenter, defaultZoom, onGoogleApi
 		const sw = bounds.getSouthWest()
 		const boundsArray = [sw.lng(), sw.lat(), ne.lng(), ne.lat()]
 
+		const marginBounds = [{
+			nw: {
+			  lat: ne.lat(),
+			  lng: sw.lng(),
+			},
+			se: {
+			  lat: sw.lat(),
+			  lng: ne.lng(),
+			},
+			sw: {
+			  lat: sw.lat(),
+			  lng: sw.lng(),
+			},
+			ne: {
+			  lat: ne.lat(),
+			  lng: ne.lng(),
+			},
+		  }]
+
+
+
 		if (!isArraysEqualEps(boundsArray, prevBoundsRef.current, EPS)) {
 			if (onChange) {
 				onChange({
 					zoom,
 					center: [centerLatLng.lng(), centerLatLng.lat()],
 					bounds,
+					marginBounds,
 				})
 			}
 			prevBoundsRef.current = boundsArray
