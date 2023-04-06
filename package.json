@@ -40,8 +40,8 @@
 		"publish": "yarn build && npm publish"
 	},
 	"peerDependencies": {
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.4",
@@ -67,8 +67,8 @@
 		"microbundle-crl": "^0.13.11",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.8.7",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
+		"react": "^17.0.2 || ^18.0.0",
+		"react-dom": "^17.0.2 || ^18.0.0",
 		"react-scripts": "^5.0.1",
 		"typescript": "^5.0.3"
 	},

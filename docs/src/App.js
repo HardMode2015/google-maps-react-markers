@@ -66,7 +66,7 @@ const App = () => {
 		setHighlighted(markerId)
 	}
 
-	const onMapChange = ({ bounds, zoom, marginBounds }) => {
+	const onMapChange = ({ bounds, zoom }) => {
 		const ne = bounds.getNorthEast()
 		const sw = bounds.getSouthWest()
 		/**
